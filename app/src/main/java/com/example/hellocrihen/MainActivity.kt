@@ -87,35 +87,43 @@ class MainActivity : AppCompatActivity() {
     fun musica(){
         println("OBJETO INSTRUMENTO ========")
         var miInstrumento:InstrumentoMusical
-                = InstrumentoMusical("Instrumento","Percusion")
+                = InstrumentoMusical("INSTRUMENTO","PERCUSION")
         with(miInstrumento) {
             marca = "XYZ"
             tocar()
             limpiar()
         }
         println("======= OBJETO GUITARRA")
-        var miGuitarra:Guitarra= Guitarra("cafe")
+        var miGuitarra:Guitarra= Guitarra("CAFE")
         miGuitarra.afinar()
+        println("======= OBJETO GUITARRA3")
+        // la asignacion de abajo manda error en Guitarra()
+        // aunque especificamente no lleve en la clase parametro
+        // dentro del cuerpo de la clase esta el constructor de
+        // la variable color como parametro requerido de la clase
+        /* var miGuitarra3:Guitarra= Guitarra()
+        miGuitarra3.afinar()
+        */
         println("======= OBJETO GUITARRA2")
         var miGuitarra2:
-                Guitarra2= Guitarra2("azul","guitarra2","de cuerdas")
+                Guitarra2= Guitarra2("AZUL","GUITARRA2","CUERDAS")
         with(miGuitarra2){
-            marca="resistol"
+            marca="RESISTOL"
             afinar()
             tocar()
             limpiar()
         }
         println("======= OBJETO FLAUTA")
-        var miFlauta:Flauta=Flauta("Pequeña")
+        var miFlauta:Flauta=Flauta("PEQUEÑA")
         with(miFlauta) {
-            nombre = "MI FLAUTICA"
-            tipoInstrumento = "DE VIENTO"
+            nombre = "FLAUTICA"
+            tipoInstrumento = "VIENTO"
             brillar()
             tocar()
             limpiar()
         }
         println("======= OBJETO FLAUTA2")
-        var miFlauta2:Flauta2= Flauta2("grande","FLAUTON","DE AIRE")
+        var miFlauta2:Flauta2= Flauta2("GRANDE","FLAUTON","AIRE")
         with(miFlauta2) {
             marca = "OTRA"
             brillar()
@@ -138,6 +146,44 @@ class MainActivity : AppCompatActivity() {
             tocar()
             limpiar()
             cambiaCuerda()
+        }
+        /* estas lineas mandarian error en la declaracion de var
+         * porque como es una clase abstracta InstrmentoMusical2
+         * no se puede instanciar
+         *
+        println("ABSTRACT INSTRUMENTO ========")
+        var miInstrumento2:InstrumentoMusical2
+                = InstrumentoMusical2("INSTRUMENTO","PERCUSION")
+        with(miInstrumento2) {
+            marca = "XYZ"
+            tocar()
+            limpiar()
+        }
+         */
+        println("======= ABSTRACT GUITARRA3")
+        var miGuitarra3:
+                Guitarra3= Guitarra3("VERDE","GUITARRA3","CUERDAS")
+        with(miGuitarra3){
+            marca="RANGER"
+            afinar()
+            tocar()
+            tipoSonido()
+            limpiar()
+        }
+        println("======= INSTANCIAR UNA CLASE ABSTRACTA")
+        /* se va a instanciar una clase abstracta pero atravez
+        de un objeto
+        var instrumentAbstracto:InstrumentoMusical2=InstrumentoMusical2
+         */
+        var instrumentAbstracto=object : InstrumentoMusical2("","") {
+            override fun tipoSonido() {
+                println("Not yet implemented")
+            }
+        }
+        with(instrumentAbstracto){
+            nombre ="ABSTRACTO"
+            tipoSonido()
+            tocar()
         }
 
 

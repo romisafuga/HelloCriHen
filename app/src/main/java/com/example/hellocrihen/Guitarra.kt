@@ -6,7 +6,7 @@ class Guitarra {
         this.color = color
     }
     fun afinar(){
-        println("HIJO: El color de la guitarra es $color")
+        println("HIJO : AFINAR guitarra es $color")
     }
 }
 
@@ -20,10 +20,28 @@ open class Guitarra2 :InstrumentoMusical{
         this.color = color
     }
     fun afinar(){
-        println("HIJO: El color de la guitarra es $color")
+        println("HIJO : AFINAR guitarra es $color")
     }
     override fun tocar(){
-        println("HIJO: Estoy tocando una guitarra de nombre $nombre\n y de marca $marca")
-        println("HIJO: tocar con los dedos")
+        println("HIJO : TOCANDO nombre $nombre marca $marca")
+    }
+}
+
+open class Guitarra3 :InstrumentoMusical2{
+    var color:String=""
+    constructor(color:String,
+                nombre:String,
+                tipoInstrumento:String):super(nombre,tipoInstrumento){
+        this.color = color
+    }
+    fun afinar(){
+        println("HIJO : AFINAR guitarra es $color")
+    }
+    override fun tocar(){
+        println("HIJO : TOCANDO nombre $nombre marca $marca")
+    }
+
+    override fun tipoSonido() {
+        println("Not yet implemented")
     }
 }

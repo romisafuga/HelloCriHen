@@ -5,7 +5,7 @@ import com.example.hellocrihen.Guitarra2
 class Ukelele:Guitarra2("","","") {
     var tipo:String =""
     fun cambiaCuerda(){
-        println("NIETO: se estan cambiando las cuerdas del $nombre")
+        println("NIETO: CAMBIANDO las cuerdas del $nombre")
     }
 }
 
@@ -21,11 +21,10 @@ class Ukelele2:Guitarra2{
      }
 
     fun cambiaCuerda(){
-        println("NIETO: se estan cambiando las cuerdas del $nombre")
+        println("NIETO: CAMBIANDO las cuerdas del $nombre")
     }
 
     override fun tocar(){
-        println("NIETO: Estoy tocando una guitarra de nombre $nombre\n y de marca $marca")
-        println("NIETO: tocar con los dedos")
+        println("NIETO: TOCANDO nombre $nombre marca $marca")
     }
 }
